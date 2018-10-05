@@ -1,4 +1,4 @@
-Flower myFlower1;
+Flower myFlower1;  // the first instance of the Flower class
 Flower myFlower2;
 Flower myFlower3;
 
