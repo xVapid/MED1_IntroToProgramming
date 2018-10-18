@@ -1,3 +1,5 @@
+// two dimensional array example
+
 int n_rows=10;
 int n_columns = 5;
 
