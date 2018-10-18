@@ -1,6 +1,7 @@
-Flower myFlower1;  // the first instance of the Flower class
-Flower myFlower2;
-Flower myFlower3;
+
+
+Flower [] FlowerRow = new Flower[6];  // flower array
+int n_flowers= FlowerRow.length;
 
 void setup() {
   size(1600,1200);
@@ -11,17 +12,23 @@ void setup() {
   float _x=width/2;
   float _y=height/2;
   int _pc=#FFA000;
-  myFlower1 = new Flower(_r1,_petals,_x,_y,_pc);
-  myFlower2 = new Flower(_r1,_petals,_x+random(-100,100),_y,_pc);
-  myFlower3 = new Flower(_r1,_petals,_x+50,_y,_pc);
+  
+  //print(FlowerRow.length);
+  float fSpace=width/n_flowers;
+  float stepHalf=fSpace/2;
+  
+  for (int i = 0; i<n_flowers; i +=1) { 
+//    FlowerRow[i] = new Flower(_r1,_petals,fSpace*i,_y,_pc); 
+    FlowerRow[i] = new Flower(_r1+random(-20,20),_petals+int(random(-3,3)),stepHalf+i*fSpace,_y,_pc); 
 
-//  myFlower2 = new Flower();
-//   myFlower3 = new Flower();
+  }
+
 }
 
 void draw(){
-  myFlower1.display();
-  myFlower2.display();
-  myFlower3.display();
-  noLoop();
+ 
+  for (int i = 0; i<n_flowers; i +=1) { 
+    FlowerRow[i].display(); 
+  }
+
 }
