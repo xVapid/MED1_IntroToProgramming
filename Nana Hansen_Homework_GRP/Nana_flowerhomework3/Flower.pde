@@ -11,7 +11,7 @@ class Flower {
   float x;       // x-position of the center of the flower
   float y;       // y-position of the center of the flower
   color petalColor = #3F24DE;//hexadecimal number for the color of petals
-  
+
   //Array
   int num = 30;
   int[] arrayX = new int[num];
@@ -27,8 +27,7 @@ class Flower {
     speed = temp_speed;
   }
 
-    void display () {
-
+  void display () {
     fill(petalColor);
     for (float i=0; i<PI*2; i+=2*PI/n_petals) {
       ballX=x + r*cos(i);
@@ -51,25 +50,25 @@ class Flower {
   }
 
   void mouseDragged() {
-    if(mousePressed){
-    x = mouseX;
-    y = mouseY;
-    if (mouseX > width/2) {
-      petalColor = #DA67FA;
-    } else if (mouseX < width/2) {
-      petalColor = #FFA000;
-    }
+    if (mousePressed) {
+      x = mouseX;
+      y = mouseY;
+      if (mouseX > width/2) {
+        petalColor = #DA67FA;
+      } else if (mouseX < width/2) {
+        petalColor = #FFA000;
+      }
     }
   }
 
   void collision() {
     float d = dist(myFlower1.x, myFlower1.y, myFlower3.x, myFlower3.y);
-    float d2 = dist(myFlower1.x, myFlower1.y, myFlower2.x, myFlower2.y);
-    
-    if(d < myFlower1.r + myFlower3.r + 70){
-        petalColor = #000000;
-    } else if (d2 < myFlower1.r + myFlower2.r + 70){
-      background(#03F9FF);
-    }
+    //float d2 = dist(myFlower1.x, myFlower1.y, myFlower2.x, myFlower2.y);
+
+    if (d < myFlower1.r + myFlower3.r + 70) {
+      petalColor = #000000;
+    }// else if (d2 < myFlower1.r + myFlower2.r + 70){
+    //background(#03F9FF);
+    //}
   }
 }

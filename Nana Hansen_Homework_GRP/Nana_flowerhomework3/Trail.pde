@@ -1,12 +1,12 @@
 class Trail {
-  int repeats = 200;
+  int repeats = 50;
+  int[] Tx = new int[repeats];  //Stores the position of the cursors X coordination
+     int[] Ty = new int[repeats];  //Stores the position of the cursors Y coordination
+     Trail[] t = new Trail[repeats];
   
   void t(){
-     int[] Tx = new int[repeats];  //Stores the position of the cursors X coordination
-     int[] Ty = new int[repeats];  //Stores the position of the cursors Y coordination
-      
      noStroke();
-     fill(143,64,234,102);//Colour and opacity of the object
+     fill(255,102);//Colour and opacity of the object
 
      
      //Shifts the values of the array to the right 
@@ -21,8 +21,7 @@ class Trail {
      
      //Draw the circles
      for(int i = 0; i < repeats; i++){
-       ellipse(Tx[i], Ty[i], i/2, i/2);
+       ellipse(Tx[i], Ty[i], i/2.0, i/2.0);
      }
-     
   }
 }
