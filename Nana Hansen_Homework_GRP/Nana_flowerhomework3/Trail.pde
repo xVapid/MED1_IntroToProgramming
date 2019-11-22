@@ -2,7 +2,6 @@ class Trail {
   int repeats = 50;
   int[] Tx = new int[repeats];  //Stores the position of the cursors X coordination
      int[] Ty = new int[repeats];  //Stores the position of the cursors Y coordination
-     Trail[] t = new Trail[repeats];
   
   void t(){
      noStroke();
